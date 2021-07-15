@@ -7,25 +7,39 @@ const Constraint=Matter.Constraint;
 
 var bgImg
 
-function preLoad(){
+function preload(){
   bgImg = loadImage("snow2.jpg")
 }
 
 function setup() {
-  createCanvas(800,400);
+  createCanvas(900,400);
   engine = Engine.create();
 	world = engine.world;
-  
-  girl=new girl(400,400,40);
+
+  snow = new Snow(100,100,100,100);
+  snow2 = new Snow(300,100,100,100);
+  snow3 = new Snow(400,100,100,100);
+  snow4 = new Snow(500,100,100,100);
+  snow5 = new Snow(600,100,100,100);
+  snow6 = new Snow(700,100,100,100);
+  snow7 = new Snow(800,100,100,100);
+
+  girl=new Girl(200,300,200,200);
 
   Engine.run(engine);
 }
 
 function draw() {
-  background(225,225,225);  
+  background(bgImg);
 
-  girl.display()
-  Snow.display()
+  girl.display();
+  snow.display();
+  snow2.display();
+  snow3.display();
+  snow4.display();
+  snow5.display();
+  snow6.display();
+  snow7.display();
 
   drawSprites();
 }
